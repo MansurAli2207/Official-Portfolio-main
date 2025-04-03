@@ -34,7 +34,7 @@ public class SwipeController : MonoBehaviour
         {
             for (int i = 0; i < pos.Length; i++)
             {
-                if (scroll_pos < pos[i] + (distance / 1.5) && scroll_pos > pos[i] - (distance / 1.5))
+                if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
                 {
                     scrollbar.GetComponent<Scrollbar>().value = Mathf.Lerp(scrollbar.GetComponent<Scrollbar>().value, pos[i], 0.1f);
                 }
@@ -43,7 +43,7 @@ public class SwipeController : MonoBehaviour
 
         for (int i = 0; i < pos.Length; i++)
         {
-            if (scroll_pos < pos[i] + (distance / 1.5) && scroll_pos > pos[i] - (distance / 1.5))
+            if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
             {
                 // MoveTowards ensures it reaches exactly 1f
                 transform.GetChild(i).localScale = Vector2.MoveTowards(transform.GetChild(i).localScale, new Vector2(1f, 1f), Time.deltaTime * 5f);
