@@ -11,6 +11,6 @@ public class HyperLInkCallBacks : MonoBehaviour
 
     public void DownloadResume()
     {
-        Application.OpenURL("https://drive.google.com/file/d/1VXoCxetJIdLxiPNafHD-vjEaw2J2uvxy/view?usp=drivesdk");
+        Application.OpenURL("https://drive.google.com/file/d/1_lGYaMHaYYgkoTpoLo9XVJ5Z4uT8UVeA/view?usp=sharing");
     }
 }
