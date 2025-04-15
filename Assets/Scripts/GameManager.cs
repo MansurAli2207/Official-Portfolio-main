@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject levelTwoPrefab;
 
-     private GameObject currentLevelTwo; // Reference to the currently instantiated LevelOne
+    private GameObject currentLevelTwo; // Reference to the currently instantiated LevelOne
 
     public static GameManager Instance { get; private set; }
 
@@ -19,21 +19,21 @@ public class GameManager : MonoBehaviour
 
     public GameObject portfolioPage;
 
-      public GameObject shootingGameLevelSelectPage;
+    public GameObject shootingGameLevelSelectPage;
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this; // Set the Singleton instance
-         //   DontDestroyOnLoad(gameObject); // Optional: Keep this object across scenes
+                             //   DontDestroyOnLoad(gameObject); // Optional: Keep this object across scenes
         }
         else
         {
-         //   Destroy(gameObject); // Destroy duplicate instances
+            //   Destroy(gameObject); // Destroy duplicate instances
         }
     }
-    
+
 
 
 
@@ -49,9 +49,9 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("LevelOne is already instantiated or prefab is not assigned.");
         }
     }
-     public void LevelTwoInstantiate()
+    public void LevelTwoInstantiate()
     {
-        if (levelTwoPrefab!= null && currentLevelTwo == null)
+        if (levelTwoPrefab != null && currentLevelTwo == null)
         {
             currentLevelTwo = Instantiate(levelTwoPrefab, levelTwoPrefab.transform.position, levelTwoPrefab.transform.rotation);
         }
@@ -87,9 +87,9 @@ public class GameManager : MonoBehaviour
         // Instantiate a new LevelOne from the prefab
         currentLevelOne = Instantiate(levelOnePrefab, levelOnePrefab.transform.position, levelOnePrefab.transform.rotation);
 
-         Debug.Log("LevelOne has been reset and re-instantiated.");
+        Debug.Log("LevelOne has been reset and re-instantiated.");
     }
-     public void LevelTwoReInstantiate()
+    public void LevelTwoReInstantiate()
     {
         GameObject[] floatingTexts = GameObject.FindGameObjectsWithTag("Text");
         foreach (GameObject floatingText in floatingTexts)
@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
         // Instantiate a new LevelOne from the prefab
         currentLevelTwo = Instantiate(levelTwoPrefab, levelTwoPrefab.transform.position, levelTwoPrefab.transform.rotation);
 
-         Debug.Log("LevelOne has been reset and re-instantiated.");
+        Debug.Log("LevelOne has been reset and re-instantiated.");
     }
 
     public void shootingGameHomePage()
@@ -128,12 +128,12 @@ public class GameManager : MonoBehaviour
     {
         ShootingGameHomePage.SetActive(false);
     }
-    
+
     public void HomePage()
     {
         // shootingGameRestartPageDisable.SetActive(false);
         portfolioPage.SetActive(true);
-       
+
     }
     public void DestroyLevelOne()
     {
@@ -151,22 +151,22 @@ public class GameManager : MonoBehaviour
             Destroy(demonEye);
         }
 
-         GameObject[] Bulls = GameObject.FindGameObjectsWithTag("Bullet");
+        GameObject[] Bulls = GameObject.FindGameObjectsWithTag("Bullet");
         foreach (GameObject bulls in Bulls)
         {
             Destroy(bulls);
         }
-       
+
         // Destroy the currently instantiated LevelOne
-         if (currentLevelOne != null)
+        if (currentLevelOne != null)
         {
             Destroy(currentLevelOne);
-          //  Destroy(currentLevelTwo);
+            //  Destroy(currentLevelTwo);
         }
 
         Debug.Log("LevelOne and all related objects have been destroyed.");
     }
-     public void DestroyLevelTwo()
+    public void DestroyLevelTwo()
     {
         // Destroy all objects with the tag "Text"
         GameObject[] floatingTexts = GameObject.FindGameObjectsWithTag("Text");
@@ -182,17 +182,17 @@ public class GameManager : MonoBehaviour
             Destroy(demonEye);
         }
 
-         GameObject[] Bulls = GameObject.FindGameObjectsWithTag("Bullet");
+        GameObject[] Bulls = GameObject.FindGameObjectsWithTag("Bullet");
         foreach (GameObject bulls in Bulls)
         {
             Destroy(bulls);
         }
-       
+
         // Destroy the currently instantiated LevelOne
-         if (currentLevelTwo != null)
+        if (currentLevelTwo != null)
         {
             Destroy(currentLevelTwo);
-           // Destroy(currentLevelOne);
+            // Destroy(currentLevelOne);
         }
 
         Debug.Log("LevelOne and all related objects have been destroyed.");
@@ -203,14 +203,14 @@ public class GameManager : MonoBehaviour
         portfolioPage.SetActive(true);
         shootingGameLevelSelectPage.SetActive(false);
         DestroyLevelOne();
-        
+
     }
     public void LevelPage2()
     {
         portfolioPage.SetActive(true);
         shootingGameLevelSelectPage.SetActive(false);
-        
+
         DestroyLevelTwo();
     }
-    
+
 }

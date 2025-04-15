@@ -11,6 +11,11 @@ public class HyperLInkCallBacks : MonoBehaviour
 
     public void DownloadResume()
     {
-        Application.OpenURL("https://drive.google.com/file/d/1_lGYaMHaYYgkoTpoLo9XVJ5Z4uT8UVeA/view?usp=sharing");
+        Application.OpenURL("https://drive.google.com/file/d/1mP-V90OK2JFSDVvErTfcdgoL28WsR64T/view?usp=sharing");
+    }
+
+    public void PortfolioSiteOpen()
+    {
+         Application.OpenURL("https://mansurali.framer.website/");
     }
 }
